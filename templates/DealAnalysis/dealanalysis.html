@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>Bridge Deal Analysis</TITLE>
+<META name="description" content="">
+<META name="keywords" content="">
+<script language='javascript'>
+<!--
+function maxView(pCB)
+{
+   //if (pCB.checked)
+   //{
+     // document.all.f1.rows = '5,*,10';
+      //document.all.f2.cols = '2,*';
+   //}
+   //else
+   //{
+      //document.all.f1.rows = '40,*,30';
+      //document.all.f2.cols = '20%,*';
+   //}
+   
+   if (pCB.checked)
+   {
+      document.getElementById("f1").setAttribute("rows", '5,*,10');
+      document.getElementById("f2").setAttribute("cols" , '2,*');
+   }
+   else
+   {
+      document.getElementById("f1").setAttribute("rows", '40,*,30');
+      document.getElementById("f2").setAttribute("cols", '20%,*');
+   }
+
+}
+//-->
+</script>
+<BASE TARGET=main>
+</HEAD>
+
+<FRAMESET id="f1" ROWS="40,*,30" FRAMEBORDER="1" BORDER="1">
+<FRAME NAME="header" SRC="DealAnalysis/dealhead.html" MARGINWIDTH="10" SCROLLING="NO">
+<FRAMESET id="f2" COLS="20%,*" FRAMEBORDER="1" BORDER="1">
+  <FRAME NAME="slist" SRC="deals.html" BORDER="1" SCROLLING="NO" FRAMEBORDER="1" MARGINWIDTH="10" MARGINHEIGHT="5"/>
+  <FRAME NAME="main"  SRC="dealmain.html" FRAMEBORDER="1" BORDER="1" SCROLLING="auto"/>
+</FRAMESET>
+<FRAME NAME="footer" SRC="dealfoot.html" FRAMEBORDER="1" BORDER="1" MARGINWIDTH="10" SCROLLING="NO"/>
+</FRAMESET>
+</HTML>

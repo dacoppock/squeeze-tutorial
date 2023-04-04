@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<meta name='description' content='Enter and play a bridge deal'>
+<meta name='keywords' content='bridge,squeeze,'>
+<style type="text/css">
+@import URL("../bridge.css");
+</style>
+<script language='javascript'>
+<!--
+function changeDeals(deal)
+{
+   //alert(deal);
+   parent.slist.location = deal;  
+}
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#EEEEEH" onload="top.name='DealWin'">
+
+<div id=intro>
+<span class=head>Analyze a Bridge Deal</span>
+</div>
+
+<div style="position: absolute; top: 10px; left: 300px">
+<select onchange=changeDeals(this.options[this.selectedIndex].value) class=dropdown>
+<option value=deals.html>Change Deal Selection...
+<option value=deals.html>Bridge Squeezes Complete
+<option value=watson.html>Watson's Play of the Hand
+</select>
+</div>
+
+</BODY>
+</HTML>

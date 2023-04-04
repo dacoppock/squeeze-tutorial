@@ -1,0 +1,446 @@
+<html>
+<head>
+<LINK REL="stylesheet" TYPE="text/css" HREF="../bridge.css">
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!--
+var testme = "This is a test";
+
+function expandIt(el) 
+{
+    whichEl = eval(el);
+    whichIm = event.srcElement;
+    if (whichEl.style.display == "none") 
+    {
+        whichEl.style.display = "";
+        whichIm.src = "../Images/triUp.gif";        
+    }
+    else 
+    {
+        whichEl.style.display = "none";
+        whichIm.src = "../Images/triDown.gif";
+    }
+}
+
+
+var gDeals = new Array();
+var gLength = 0;
+var ptr = -1;
+
+function showDealNames()
+{
+  var str = '';
+  for (var i=0; i < gDeals.length; i++)
+  {
+     str += 'Deal: ' + i + ' ' + gDeals[i].dealName + '\n';
+  }
+  alert(str);
+
+}
+
+function sendHomeMadeDeal()
+{
+   var dealName = parent.main.document.all.dn.value;
+   var cmt = parent.main.document.all.commentary.value;
+   var ns = parent.main.document.all.ns.value;
+   var nh = parent.main.document.all.nh.value;
+   var nd = parent.main.document.all.nd.value;
+   var nc = parent.main.document.all.nc.value;
+   var ws = parent.main.document.all.ws.value;
+   var wh = parent.main.document.all.wh.value;
+   var wd = parent.main.document.all.wd.value;
+   var wc = parent.main.document.all.wc.value;
+   var es = parent.main.document.all.es.value;
+   var eh = parent.main.document.all.eh.value;
+   var ed = parent.main.document.all.ed.value;
+   var ec = parent.main.document.all.ec.value;
+   var ss = parent.main.document.all.ss.value;
+   var sh = parent.main.document.all.sh.value;
+   var sd = parent.main.document.all.sd.value;
+   var sc = parent.main.document.all.sc.value;
+   var idx = parent.main.document.all.level.selectedIndex;
+   var level = parent.main.document.all.level[idx].value;
+   idx = parent.main.document.all.trump.selectedIndex;
+   var trump = parent.main.document.all.trump[idx].value;
+   setDeal(dealName,ns,nh,nd,nc,ws,wh,wd,wc,es,eh,ed,ec,
+            ss,sh,sd,sc,trump, cmt, level);
+   setPtr(gDeals.length - 1);
+   //showDealNames();
+   parent.main.location='playhand.html';
+}
+
+function setPtr()
+{
+   ptr = arguments[0];
+}
+
+function remoteGetAttribution()
+{
+  return gDeals[ptr].getAttribution();
+}
+
+function remoteGetDealName()
+{
+  return gDeals[ptr].getDealName();
+}
+
+function remoteGetNS()
+{
+  return gDeals[ptr].getNS();
+}
+
+function remoteGetNH()
+{
+  return gDeals[ptr].getNH();
+}
+
+function remoteGetND()
+{
+  return gDeals[ptr].getND();
+}
+
+function remoteGetNC()
+{
+  return gDeals[ptr].getNC();
+}
+
+function remoteGetWS()
+{
+  return gDeals[ptr].getWS();
+}
+
+function remoteGetWH()
+{
+  return gDeals[ptr].getWH();
+}
+
+function remoteGetWD()
+{
+  return gDeals[ptr].getWD();
+}
+
+function remoteGetWC()
+{
+  return gDeals[ptr].getWC();
+}
+
+function remoteGetES()
+{
+  return gDeals[ptr].getES();
+}
+
+function remoteGetEH()
+{
+  return gDeals[ptr].getEH();
+}
+
+function remoteGetED()
+{
+  return gDeals[ptr].getED();
+}
+
+function remoteGetEC()
+{
+  return gDeals[ptr].getEC();
+}
+
+function remoteGetSS()
+{
+  return gDeals[ptr].getSS();
+}
+
+function remoteGetSH()
+{
+  return gDeals[ptr].getSH();
+}
+
+function remoteGetSD()
+{
+  return gDeals[ptr].getSD();
+}
+
+function remoteGetSC()
+{
+  return gDeals[ptr].getSC();
+}
+
+function remoteGetTrump()
+{
+  return gDeals[ptr].getTrump();
+}
+
+function remoteGetCommentary()
+{
+  return gDeals[ptr].getCommentary();
+}
+
+function remoteGetLevel()
+{
+  return gDeals[ptr].getLevel();
+}
+
+function setDeal()
+{
+   var pos = gDeals.length;
+   gDeals[pos] = new Object;
+   gDeals[pos].dealName = arguments[0];
+   gDeals[pos].ns = arguments[1];
+   gDeals[pos].nh = arguments[2];
+   gDeals[pos].nd = arguments[3];
+   gDeals[pos].nc = arguments[4];
+   gDeals[pos].ws = arguments[5];
+   gDeals[pos].wh = arguments[6];
+   gDeals[pos].wd = arguments[7];
+   gDeals[pos].wc = arguments[8];
+   gDeals[pos].es = arguments[9];
+   gDeals[pos].eh = arguments[10];
+   gDeals[pos].ed = arguments[11];
+   gDeals[pos].ec = arguments[12];
+   gDeals[pos].ss = arguments[13];
+   gDeals[pos].sh = arguments[14];
+   gDeals[pos].sd = arguments[15];
+   gDeals[pos].sc = arguments[16];
+   gDeals[pos].trump = arguments[17];
+   gDeals[pos].commentary = arguments[18];
+   gDeals[pos].level = arguments[19];
+   gDeals[pos].attribution = arguments[20];
+   gDeals[pos].getDealName = getDealName;
+   gDeals[pos].getNS = getNS;
+   gDeals[pos].getNH = getNH;
+   gDeals[pos].getND = getND;
+   gDeals[pos].getNC = getNC;
+   gDeals[pos].getWS = getWS;
+   gDeals[pos].getWH = getWH;
+   gDeals[pos].getWD = getWD;
+   gDeals[pos].getWC = getWC;
+   gDeals[pos].getES = getES;
+   gDeals[pos].getEH = getEH;
+   gDeals[pos].getED = getED;
+   gDeals[pos].getEC = getEC;
+   gDeals[pos].getSS = getSS;
+   gDeals[pos].getSH = getSH;
+   gDeals[pos].getSD = getSD;
+   gDeals[pos].getSC = getSC;
+   gDeals[pos].getTrump = getTrump;
+   gDeals[pos].getCommentary = getCommentary;
+   gDeals[pos].getLevel = getLevel;
+   gDeals[pos].getAttribution = getAttribution;
+}
+
+function getAttribution()
+{
+   return this.attribution;
+}
+
+function getDealName()
+{
+   return this.dealName;
+}
+
+function getNS()
+{
+   return this.ns;
+}
+
+function getNH()
+{
+   return this.nh;
+}
+
+function getND()
+{
+   return this.nd;
+}
+
+function getNC()
+{
+   return this.nc;
+}
+
+function getWS()
+{
+   return this.ws;
+}
+
+function getWH()
+{
+   return this.wh;
+}
+
+function getWD()
+{
+   return this.wd;
+}
+
+function getWC()
+{
+   return this.wc;
+}
+
+function getES()
+{
+   return this.es;
+}
+
+function getEH()
+{
+   return this.eh;
+}
+
+function getED()
+{
+   return this.ed;
+}
+
+function getEC()
+{
+   return this.ec;
+}
+
+function getSS()
+{
+   return this.ss;
+}
+
+function getSH()
+{
+   return this.sh;
+}
+
+function getSD()
+{
+   return this.sd;
+}
+
+function getSC()
+{
+   return this.sc;
+}
+
+
+function getTrump()
+{
+   return this.trump;
+}
+
+function getCommentary()
+{
+   return this.commentary;
+}
+
+function getLevel()
+{
+   return this.level;
+}
+
+function loadDeals()
+{
+   var cmt = '';
+   /* template
+   cmt = '';
+   setDeal('Name','ns','nh','nd','nc','ws','wh','wd','wc','es','eh','ed','ec',
+            'ss','sh','sd','sc','strain', cmt, lvl, attrib);
+
+   */
+
+   //0
+   cmt = '';
+   cmt += 'West preempts with 2 spades, then leads the spade Q. Making 7 is possible. ';
+   cmt += 'Solution can be found for same hand in Miscellaneous list. ';
+   cmt += 'Features of this panel: 1) West always has opening lead; 2) Click a card to play it, ';
+   cmt += 'click again to unplay it; 3) Some rules for squeeze play can be displayed by selecting ';
+   cmt += 'from the drop down list in upper right hand corner; 4) After several tricks, can restart ';
+   cmt += 'at a particular trick by entering trick number and clicking restart.';
+   setDeal('Sample','A54','A95','AK4','9764','QJT973','J76','T85','8','62','QT2','QJ9762','Q3',
+            'K8','K843','3','AKJT52','Club', cmt, 6);
+   
+   //1
+   //Watson Page 54
+   cmt = '';
+   cmt += 'West leads a spade.';
+   setDeal('Page 54','QT5','AK2','AQ5','Q976','J987','9874','T76','A2','632','JT5','J943','854',
+            'AK4','Q63','K82','KJT3','NT', cmt, 6, 'watson');
+   
+   //2
+   //Watson Page 57
+   cmt = '';
+   cmt += 'West leads a spade 5.';
+   setDeal('Page 57','83','QJ76','KQJ85','92','QT75','T92','62','J643','J94','853','A73','QT75',
+            'AK62','AK4','T94','AK8','NT', cmt, 6, 'watson');
+   
+   //3
+   //Watson Page 61
+   cmt = '';
+   cmt += 'West leads a spade Q.';
+   setDeal('Page 61','A6','A4','QJ98','QJ743','QJT73','J98','A32','A6','8542','T765','54','952',
+            'K9','KQ32','KT76','KT8','NT', cmt, 3, 'watson');
+   
+
+   //4 (for now)
+   //From ACBL Bulletin August, 2002; Kantar Test Your Play #2
+   cmt = '';
+   cmt += 'After West makes a takeout dbl, N/S end in 6 hearts.  West leads heart A, followed';
+   cmt += ' by heart 4.  Given that West holds 4 spades and the club K, the contract can be ';
+   cmt += ' made on any layout of the remaining cards. Deal has been slightly revised from bulletin: ';
+   cmt += 'diamond 8 and J interchanged. Do not take club finesse early. After next to last heart is ';
+   cmt += 'played, play the minor you think west has unguarded.';
+   setDeal('Test Your Play(8/02)','A985','Q63','T63','AQ8','JT74','A4','K85','KJ62','63','T5','QJ72','T9753',
+            'KQ2','KJ9872','A94','4','Heart', cmt, 6, 'acbl:kantar');
+
+   //5 (for now)
+   cmt = '';
+   cmt += 'West preempts with 2 spades, then leads the spade Q. Making 7 is possible. ';
+   cmt += 'On the next to last club west will unguard one of the minors. If the diamond is unguarded, ';
+   cmt += 'the double squeeze becomes type b1. In this case the diamond winners must be cashed before ';
+   cmt += 'the last club. The only possible reentry to hand is in spades; hence trick one must be won ';
+   cmt += 'with the A!';
+   setDeal('Sample Revisited','A54','A95','AK4','9764','QJT973','J76','T85','8','62','QT2','QJ9762','Q3',
+            'K8','K843','3','AKJT52','Club', cmt, 6);
+   
+   
+   gLength = gDeals.length;
+   return;
+}
+
+
+//-->
+</SCRIPT>
+</head>
+
+
+<body bgcolor="#EEEEEH" onload=loadDeals()>
+
+<div id=return>
+<a href=./dealmain.html target=main>Return to Main</a>
+</div>
+<div id=enterdeal>
+<a href=./enterdeal.html target=main>Enter Deal</a>
+</div>
+
+<br>
+
+
+<A HREF=./playhand.html target=main onclick=setPtr(0)>Sample Hand</A>
+
+<H5><A HREF="#" onClick="expandIt('el1'); return false">
+<IMG SRC="../Images/triDown.gif" WIDTH=16 HEIGHT=16 BORDER=0></A>
+Watson Beginner</H5>
+<P ID="el1" STYLE="display:none; background-color:yellow">
+<A HREF=./playhand.html target=main onclick=setPtr(1)>Page 54</A>
+<BR><A HREF=./playhand.html target=main onclick=setPtr(2)>Page 57</A>
+<BR><A HREF=./playhand.html target=main onclick=setPtr(3)>Page 61</A>
+</P>
+
+
+
+<H5><A HREF="#" onClick="expandIt('el4'); return false">
+<IMG SRC="../Images/triDown.gif" WIDTH=16 HEIGHT=16 BORDER=0></A>
+Miscellaneous</H5>
+<P ID="el4" STYLE="display:none; background-color:yellow">
+<A HREF=./playhand.html target=main onclick=setPtr(4)>Test Your Play(8/02)</A>
+<BR><A HREF=./playhand.html target=main onclick=setPtr(5)>Sample Revisited</A>
+</P>
+
+
+</BODY>
+</HTML>
+

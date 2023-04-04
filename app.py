@@ -1,13 +1,12 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 
-def hello_world():
-  return "<p>Hello Douglas...</p>"
+def squeeze_tutorial():
+  return render_template('home.html')
 
 print(__name__)
 if __name__ == '__main__':
-  print("in the if statement")
   app.run(host='0.0.0.0' , debug=True)

@@ -1,0 +1,95 @@
+<html>
+<head>
+<LINK REL="stylesheet" TYPE="text/css" HREF="../bridge.css">
+<SCRIPT LANGUAGE="JavaScript1.2" src="loadenter.js">
+
+</SCRIPT>
+</head>
+
+
+<body bgcolor="#EEEEEH" onload=loadDealNames()>
+<p class=shead>Enter a Bridge Deal&nbsp;&nbsp;
+<input type=checkbox onclick=parent.maxView(this)><span class=dropdown>maxView</span></p>
+<br>
+<br>
+<div STYLE="position: absolute; top=50px; left=30px;">
+<table border=1>
+<tr>
+<td colspan=3>
+Name this Deal: <input type=text id=dn size=31 maxlength=30><br>
+Select Saved Deal: <select id=saveddeal onchange=selectDeal() class=dropdown>
+                   <option>Select...
+                   </select>
+<tr>
+<td colspan=3>Trump:
+    <select id=trump class=dropdown>
+    <option>Select...</option>
+    <option value=Spade>Spades</option>
+    <option value=Heart>Hearts</option>
+    <option value=Diamond>Diamonds</option>
+    <option value=Club>Clubs</option>
+    <option value=NT>NoTrump</option>
+   </select>
+   &nbsp;&nbsp;&nbsp;
+    Level:
+    <select id=level class=dropdown>
+    <option>Select...</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
+    <option value=4>4</option>
+    <option value=5>5</option>
+    <option value=6>6</option>
+    <option value=7>7</option>
+   </select>
+<tr>
+<td><br>
+<td><span class=cb>&spades;</span>&nbsp;<input type=text id=ns size=14 maxlength=13><br>
+    <span class=cr>&hearts;</span>&nbsp;<input type=text id=nh size=14 maxlength=13><br>
+    <span class=cr>&diams;</span>&nbsp;<input type=text id=nd size=14 maxlength=13><br>
+    <span class=cb>&clubs;</span>&nbsp;<input type=text id=nc size=14 maxlength=13><br>
+<td><br>
+
+
+<tr>
+<td><span class=cb>&spades;</span>&nbsp;<input type=text id=ws size=14 maxlength=13><br>
+    <span class=cr>&hearts;</span>&nbsp;<input type=text id=wh size=14 maxlength=13><br>
+    <span class=cr>&diams;</span>&nbsp;<input type=text id=wd size=14 maxlength=13><br>
+    <span class=cb>&clubs;</span>&nbsp;<input type=text id=wc size=14 maxlength=13><br>
+<td><IMG SRC="../Images/t.gif" BORDER=0>
+<td><span class=cb>&spades;</span>&nbsp;<input type=text id=es size=14 maxlength=13><br>
+    <span class=cr>&hearts;</span>&nbsp;<input type=text id=eh size=14 maxlength=13><br>
+    <span class=cr>&diams;</span>&nbsp;<input type=text id=ed size=14 maxlength=13><br>
+    <span class=cb>&clubs;</span>&nbsp;<input type=text id=ec size=14 maxlength=13><br>
+
+<tr>
+<td><input type=checkbox id=partial>Allow Partial</td>
+<td><span class=cb>&spades;</span>&nbsp;<input type=text id=ss size=14 maxlength=13><br>
+    <span class=cr>&hearts;</span>&nbsp;<input type=text id=sh size=14 maxlength=13><br>
+    <span class=cr>&diams;</span>&nbsp;<input type=text id=sd size=14 maxlength=13><br>
+    <span class=cb>&clubs;</span>&nbsp;<input type=text id=sc size=14 maxlength=13><br>
+<td><br>
+
+<tr>
+<td colspan=3>
+<button class=enter title="Play this deal" onclick=playEnteredDeal()>Play</button>&nbsp;
+<button class=enter title="Save this deal" onclick=save()>Save</button>&nbsp;
+<button class=enter title="Delete this deal" onclick=deleteThisDeal()>DeleteOne</button>&nbsp;
+<button class=enter title="Delete all saved deals" onclick=deleteDealList()>DeleteAll</button>&nbsp;
+<button class=enter title="Get Last Played Deal" onclick=getRemoteHand()>Get</button>
+</td>
+</tr>
+
+<tr>
+<td colspan=3>
+<textarea id=commentary rows=20 cols=50>Enter suits with 'AKQJT98765432'; 
+
+Click the Allow Partial checkbox before Play/Save to enter a partial deal.
+</textarea>
+</td>
+</tr>
+</table>
+</div>
+
+</body>
+</html>

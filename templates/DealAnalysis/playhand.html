@@ -1,0 +1,271 @@
+<html>
+<head>
+<LINK REL="stylesheet" TYPE="text/css" HREF="../bridge.css">
+<script language=javascript src="../loadplay.js">
+
+</script>
+
+</head>
+
+<body bgcolor=white onload=doLoad() onunload="doUnload()">
+
+<div id=deal STYLE="postion:absolute; top: 50px; left: 50px">
+<table border=0>
+<tr>
+<th colspan=3 align=left>
+<div id=contract>
+Contract: 6 <span class=cr>&hearts;</span>
+</div>
+<input type=checkbox onclick=parent.maxView(this)><span class=dropdown>maxView</span></input>
+<tr>
+<td><br>
+<td>
+
+<div id=ns>
+<span class=cb>&spades;</span>
+
+</div>
+
+<div id=nh>
+<span class=cr>&hearts;</span>
+
+</div>
+
+<div id=nd>
+<span class=cr>&diams;</span>
+
+</div>
+
+<div id=nc>
+<span class=cb>&clubs;</span>
+
+</div>
+
+<td><br>
+</tr>
+
+<tr>
+<td>
+<div id=ws>
+<span class=cb>&spades;</span>
+
+</div>
+
+<div id=wh>
+<span class=cr>&hearts;</span>
+</div>
+
+<div id=wd>
+<span class=cr>&diams;</span>
+
+</div>
+
+<div id=wc>
+<span class=cb>&clubs;</span>
+</div>
+
+<td><IMG SRC="../Images/t.gif" BORDER=0>
+
+<td>
+<div id=es>
+<span class=cb>&spades;</span>
+</div>
+
+<div id=eh>
+<span class=cr>&hearts;</span>
+</div>
+
+<div id=ed>
+<span class=cr>&diams;</span>
+</div>
+
+<div id=ec>
+<span class=cb>&clubs;</span>
+</div>
+
+</tr>
+
+<tr>
+<td><br>
+<td>
+<div id=ss>
+<span class=cb>&spades;</span>
+</div>
+
+<div id=sh>
+<span class=cr>&hearts;</span>
+</div>
+
+<div id=sd>
+<span class=cr>&diams;</span>
+</div>
+
+<div id=sc>
+<span class=cb>&clubs;</span>
+</div>
+
+<td><br>
+</tr>
+
+<tr>
+<td colspan=3><br>
+
+<tr>
+<td colspan=3>
+Tricks: 
+<span style="color: blue">N/S</span> <span id=nst style="color: red">0</span>&nbsp;&nbsp;&nbsp;
+<span style="color: blue">E/W</span> <span id=ewt style="color: red">0</span>
+
+<tr>
+<td colspan=3>
+<span id=dealname></span>
+</table>
+</div>
+
+<tr>
+<td colspan=3>
+<span id=attrib></span>
+</table>
+</div>
+
+<div id=trick STYLE="position:absolute; top: 20px; left: 350px">
+<table border=1>
+<tr>
+<td colspan=5 align=left>
+  <button class=enter title="Enter trick number for restart" onclick=resetTrick()>Restart</button>
+  <input type=text id=trickreset size=3 maxlength=2></input>
+</td>
+
+<tr>
+<th>Trick
+<th>Lead
+<th>2nd
+<th>3rd
+<th>4th
+
+<tr>
+<td>1. <span id=t0> </span>
+<td><div id=t1><br> </div>
+<td><div id=t2><br> </div>
+<td><div id=t3><br> </div>
+<td><div id=t4><br> </div>
+
+<tr>
+<td>2. <span id=t0> </span>
+<td><div id=t1><br> </div>
+<td><div id=t2><br> </div>
+<td><div id=t3><br> </div>
+<td><div id=t4><br> </div>
+
+<tr>
+<td>3. <span id=t0> </span>
+<td><div id=t1><br> </div>
+<td><div id=t2><br> </div>
+<td><div id=t3><br> </div>
+<td><div id=t4><br> </div>
+
+<tr>
+<td>4. <span id=t0> </span>
+<td><div id=t1><br> </div>
+<td><div id=t2><br> </div>
+<td><div id=t3><br> </div>
+<td><div id=t4><br> </div>
+
+<tr>
+<td>5. <span id=t0> </span>
+<td><div id=t1><br> </div>
+<td><div id=t2><br> </div>
+<td><div id=t3><br> </div>
+<td><div id=t4><br> </div>
+
+<tr>
+<td>6. <span id=t0> </span>
+<td><div id=t1><br> </div>
+<td><div id=t2><br> </div>
+<td><div id=t3><br> </div>
+<td><div id=t4><br> </div>
+
+<tr>
+<td>7. <span id=t0> </span>
+<td><div id=t1><br> </div>
+<td><div id=t2><br> </div>
+<td><div id=t3><br> </div>
+<td><div id=t4><br> </div>
+
+<tr>
+<td>8. <span id=t0> </span>
+<td><div id=t1><br> </div>
+<td><div id=t2><br> </div>
+<td><div id=t3><br> </div>
+<td><div id=t4><br> </div>
+
+<tr>
+<td>9. <span id=t0> </span>
+<td><div id=t1><br> </div>
+<td><div id=t2><br> </div>
+<td><div id=t3><br> </div>
+<td><div id=t4><br> </div>
+
+<tr>
+<td>10. <span id=t0> </span>
+<td><div id=t1><br> </div>
+<td><div id=t2><br> </div>
+<td><div id=t3><br> </div>
+<td><div id=t4><br> </div>
+
+<tr>
+<td>11. <span id=t0> </span>
+<td><div id=t1><br> </div>
+<td><div id=t2><br> </div>
+<td><div id=t3><br> </div>
+<td><div id=t4><br> </div>
+
+<tr>
+<td>12. <span id=t0> </span>
+<td><div id=t1><br> </div>
+<td><div id=t2><br> </div>
+<td><div id=t3><br> </div>
+<td><div id=t4><br> </div>
+
+<tr>
+<td>13. <span id=t0> </span>
+<td><div id=t1><br> </div>
+<td><div id=t2><br> </div>
+<td><div id=t3><br> </div>
+<td><div id=t4><br> </div>
+
+</table>
+
+</div>
+
+<div id=sqlist STYLE="position: absolute; top: 50px; left: 600px">
+<select id=lt onchange=showText(this.selectedIndex) class=dropdown>
+<option>Love's Rules for...</option>
+<option>BLUE</option>
+<option>Entry Conditions</option>
+<option>Type R</option>
+<option>Type B2</option>
+<option>Type B1</option>
+<option>Compound Squeeze</option>
+<option>Type R Compound Squeeze</option>
+<option>Type L Compound Squeeze</option>
+<option>Type R--unrestricted</option>
+<option>Type R--restricted</option>
+<option>Type L--unrestricted</option>
+<option>Type L--restricted</option>
+</select>
+
+
+<div id=sqtext STYLE="visibility: hidden; background-color: #FCDE83;" onclick=hideme()>
+Hidden text
+</div>
+
+</div>
+
+<div STYLE="position: absolute; top: 450px; left: 50px">
+<textarea id=commentary rows=10 cols=80>Commentary</textarea>
+
+</div>
+
+</body>
+</html>
